@@ -42,6 +42,7 @@ import InfiniteScroll from 'react-infinite-scroll-component'
 
     const fetchMoreData = async () => {
     
+        //  const url = `https://api.mediastack.com/v1/news?access_key=${ props.apiKey}&category=${ props.category}&countries=${ props.country}&limit=${ props.pageSize}`
         const url = `https://newsapi.org/v2/top-headlines?country=${ props.country}&category=${ props.category}&apikey=${ props.apiKey}&page=${page + 1}&pageSize=${ props.pageSize}`;
         let data = await fetch(url);
         let parsedData = await data.json()
@@ -98,6 +99,8 @@ News.propTypes = {
     country: PropTypes.string,
     pageSize: PropTypes.number,
     category: PropTypes.string,
+
+
 
 }
 
